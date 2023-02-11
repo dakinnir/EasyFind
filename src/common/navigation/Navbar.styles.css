@@ -1,0 +1,43 @@
+/* Navbar container styles  */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0.5rem; */
+  align-items: center;
+  /* background-color: rgb(253, 253, 253); */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 1rem;
+}
+
+.navbar .brand {
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(30, 70, 140);
+}
+
+.navbar .brand:hover {
+  color: rgb(30, 70, 140);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.95rem;
+}
+
+.navbar a:hover {
+  color: rgb(100, 100, 100);
+}
+
+.navbar a.active {
+  color: black;
+  text-decoration: underline;
+}
