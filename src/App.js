@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Navbar } from "./components/navigation/Navbar";
+import { MainHeader } from "./common/navigation/MainHeader";
+import { Navbar } from "./common/navigation/Navbar";
 
 // Currently being used for navbar demo
 const ExplorePage = () => {
@@ -19,13 +20,17 @@ const LoginPage = () => {
 function App() {
   return (
     <React.Fragment>
-      <Navbar />
-      <Routes>
+      <MainHeader>
+        <Navbar />
+      </MainHeader>
+      <main className="main-container">
+        <Routes>
         <Route path="/" element={<ExplorePage />}></Route>
         <Route path="/explore" element={<ExplorePage />}></Route>
         <Route path="/services" element={<ServicesPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
       </Routes>
+      </main>
     </React.Fragment>
   );
 }
