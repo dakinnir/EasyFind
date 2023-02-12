@@ -1,0 +1,15 @@
+.vertical-center {
+  min-height: 100%;  
+  display: flex;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+.ft-small {
+  font-size: 0.875rem;
+}
+
+.border {
+  padding: 1rem;
+  border-radius: 7px;
+}
