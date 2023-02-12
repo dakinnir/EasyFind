@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import { MainHeader } from "./common/navigation/MainHeader";
+import { Navbar } from "./common/navigation/Navbar";
+
+// Currently being used for navbar demo
+const ExplorePage = () => {
+  return <div>Explore Page</div>;
+};
+
+const ServicesPage = () => {
+  return <div>Services Page</div>;
+};
+
+const LoginPage = () => {
+  return <div>Login Page</div>;
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <MainHeader>
+        <Navbar />
+      </MainHeader>
+      <main className="main-container">
+        <Routes>
+        <Route path="/" element={<ExplorePage />}></Route>
+        <Route path="/explore" element={<ExplorePage />}></Route>
+        <Route path="/services" element={<ServicesPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+      </Routes>
+      </main>
+    </React.Fragment>
   );
 }
 
