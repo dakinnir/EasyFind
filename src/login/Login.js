@@ -1,17 +1,46 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { Link } from "react-router-dom";
 
 import { Checkbox } from "../common/Checkbox";
 import "./Login.styles.css";
 
+const initialState = {
+  email: "",
+  password: "",
+  rememberChecked: false,
+};
+
+const formReducer = (state, action) => {
+  switch (action.type) {
+    case "INPUT_UPDATE":
+      return { ...state, [action.input]: action.value };
+    default:
+      return state;
+  }
+};
+
 export const Login = () => {
+  const [formState, dispatch] = useReducer(formReducer, initialState);
+
+  const onChangeHandler = (event) => {
+    const { name, value } = event.target
+    dispatch({
+      type: "INPUT_UPDATE",
+      input: name,
+      value: value
+    })
+  }
+
+  console.log(formState)
   return (
     <div className="login-container vertical-center">
       <div className="container-fluid">
         <div className="row d-flex justify-content-center h-100">
           <div className="col-8 col-md-8 col-lg-4">
             <h3 className="fw-semibold">Login</h3>
-            <p className="ft-small">Welcome back, please enter your credentials.</p>
+            <p className="ft-small">
+              Welcome back, please enter your credentials.
+            </p>
             {/* Form */}
             <form action="">
               <div className="form-group mb-1">
@@ -19,9 +48,11 @@ export const Login = () => {
                   Email
                 </label>
                 <input
-                  type="email"
-                  className="form-control form-control-sm"
                   id="email"
+                  type="email"
+                  name="email"
+                  className="form-control form-control-sm"
+                  onChange={onChangeHandler}
                 />
               </div>
               <div className="form-group mb-1">
@@ -29,9 +60,12 @@ export const Login = () => {
                   Password
                 </label>
                 <input
-                  type="password"
-                  className="form-control form-control-sm"
                   id="password"
+                  type="password"
+                  name="password"
+                  className="form-control form-control-sm"
+                  onChange={onChangeHandler}
+
                 />
               </div>
               <div className="row d-flex justify-content-between mt-2">
@@ -64,4 +98,3 @@ export const Login = () => {
     </div>
   );
 };
-
