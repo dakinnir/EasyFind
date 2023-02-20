@@ -23,23 +23,23 @@ export const Login = () => {
   const [formState, dispatch] = useReducer(formReducer, initialState);
 
   const onChangeHandler = (event) => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
     dispatch({
       type: "INPUT_UPDATE",
       input: name,
-      value: value
-    })
-  }
+      value: value,
+    });
+  };
 
-  console.log(formState)
+  console.log(formState);
   return (
-    <div className="login-container vertical-center">
+    <div className="vertical-center">
       <div className="container-fluid">
         <div className="row d-flex justify-content-center h-100">
           <div className="col-8 col-md-8 col-lg-4">
             <h3 className="fw-semibold">Login</h3>
             <p className="ft-small">
-              Welcome back, please enter your credentials.
+            Welcome back, please enter your credentials.
             </p>
             {/* Form */}
             <form action="">
@@ -65,7 +65,6 @@ export const Login = () => {
                   name="password"
                   className="form-control form-control-sm"
                   onChange={onChangeHandler}
-
                 />
               </div>
               <div className="row d-flex justify-content-between mt-2">
@@ -86,10 +85,10 @@ export const Login = () => {
                 </button>
               </div>
             </form>
-            <p className="text-center mt-3 ft-small">
+            <p className="text-center mt-2 ft-small">
               Not a member yet?{" "}
               <Link to="/register" className="link">
-                Register
+                Sign up
               </Link>
             </p>
           </div>
