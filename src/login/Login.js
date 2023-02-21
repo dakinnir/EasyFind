@@ -1,7 +1,8 @@
-import React, { useReducer } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useReducer } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Checkbox } from "../common/Checkbox";
+import { AuthenticationContext } from "../hooks/context/authContext";
 import "./Login.styles.css";
 
 const initialState = {
@@ -20,7 +21,12 @@ const formReducer = (state, action) => {
 };
 
 export const Login = () => {
+
+  const navigate = useNavigate();
+
   const [formState, dispatch] = useReducer(formReducer, initialState);
+
+  const {user, setUser } = useContext(AuthenticationContext)
 
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
@@ -30,6 +36,12 @@ export const Login = () => {
       value: value,
     });
   };
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault()
+    setUser('ddu')
+    navigate('/')
+  }
 
   console.log(formState);
   return (
@@ -42,7 +54,7 @@ export const Login = () => {
             Welcome back, please enter your credentials.
             </p>
             {/* Form */}
-            <form action="">
+            <form action="" onSubmit={onSubmitHandler}>
               <div className="form-group mb-1">
                 <label htmlFor="email" className="col-form-label-sm">
                   Email

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { AuthenticationContext } from "../../hooks/context/authContext";
 
 import "./Navbar.styles.css";
 
@@ -13,6 +14,8 @@ export const Navbar = () => {
       fontWeight: isActive ? "bold" : "normal",
     };
   };
+
+  const { user, setUser } = useContext(AuthenticationContext);
 
   return (
     <nav className="navbar navbar-expand-md bg-body-tertiary">
@@ -45,11 +48,13 @@ export const Navbar = () => {
                 Services
               </NavLink>
             </li>
+            {!user && 
             <li className="nav-item">
               <NavLink to="/login" style={activeStyle}>
                 Login
               </NavLink>
             </li>
+            }
           </ul>
         </div>
       </div>
