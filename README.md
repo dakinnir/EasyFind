@@ -1,39 +1,31 @@
-# Getting Started with Create React App
+## easy-find app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Description: 
+easyfind is a web based application that will be used to connect all service providers (such as painters, electricians, etc) to contractos. It will enable them to expand their network and find more opportunities. 
 
-## Available Scripts
+Frontend: 
+<li> HTML
+<li> CSS
+<li> ReactJS
+  
+Backend:
+<li> Express.JS
+<li> Node.JS
+<li> MongoDB
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ User Stories:
+- [X] Registration: Enable users to access the web application 
+- [X] Profile Setup: Enable users to update their profile with information regarding bio, work history, title, and much more.
+- [X] Homepage: Users will be able to create and view post.
+- [X] Categories: Users will be able to access a list of recommendations and query the database for specific job recommendations based on interest.
+- [ ] Messages: Users will be communciate with each other. (Note: Pushed to backlog)
+- [X] User Settings: Users will be to change profile settings (address, phone number, email, password, etc) and much more. 
+- [ ] Backend Development: Create connectivity amongst pages and data to ensure that users have seemless transaction using web application. 
+  
+Credits: 
+<li> Daniel Akinniranye: Software Developer
+<li> Konstandinou Onwuaduegbo: Product/Program Manager
+d tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
