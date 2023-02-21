@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { ProfileCard } from "./ProfileCard";
+import { ProfileCard } from "./components/ProfileCard";
 import './Explore.styles.css'
 
 export const ExplorePage = () => {
