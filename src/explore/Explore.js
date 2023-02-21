@@ -7,7 +7,7 @@ import './Explore.styles.css'
 export const ExplorePage = () => {
   const [professionals, setProfessionals] = useState([]);
 
-  // fake data 
+  // fake data from https://randomuser.me/api/?results=20
   const getProfessionals = async () => {
     const response = await axios.get("https://randomuser.me/api/?results=20");
     const data = await response.data;
